@@ -33,4 +33,3 @@ ourRequest.onload = function() {
     console.log(jsonResult);
 };
 ourRequest.send();
-
