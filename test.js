@@ -4,7 +4,10 @@ for (let i = 0; i < 6; i++) {
   ourRequest.open("GET", "./ratings/response " + "(" + i + ")" + ".json");
   ourRequest.onload = function () {
     var ourData = JSON.parse(ourRequest.responseText);
+    console.log(ourData);
+    console.log(typeof ourData);
     var rated = ourData.ratings.worker.rated;
+    console.log(rated);
     var unrated = ourData.ratings.worker.unrated;
     var all_avg = ourData.ratings.worker.all.avg;
     var all_std = ourData.ratings.worker.all.std;
