@@ -18,8 +18,8 @@ for (let i = 0; i < 63; i++) {
     var t_avg = ourData.ratings.worker.q[1].avg;
     var t_std = ourData.ratings.worker.q[1].std;
     var ourResult = {
-      rated: rated,
-      unrated: unrated,
+      "rated": rated,
+      "unrated": unrated,
       "all_ratings.avg": all_avg,
       "all_ratings.std": all_std,
       "src_ratings.avg": s_avg,
@@ -54,11 +54,33 @@ function myPerson(data) {
   }
   document.getElementById("api").innerHTML = JSON.stringify(person);
 }
-
+// console.log(rating[0]);
 //combine
 combineFunction(rating, person);
 
-function combineFunction(r, p) {
+// function getRating() {
+//   var rat = myResult(data);
+//   console.log(rat);
+// }
+
+function combineFunction(rat, per) {
+  var rat1 = rat;
+  var r = [...rat1];
+  var per1 = per;
+  var p = per1.slice();
   console.log(r);
   console.log(p);
+  var ratings = {
+    "no": p.no,
+    "userid": p.userid,
+    "companyid": p.companyid,
+    "rated": r.rated,
+    "unrated": r.unrated,
+    "all_ratings.avg": r['all_ratings.avg'],
+    "all_ratings.std": r['all_ratings.std'],
+    "src_ratings.avg": r['src_ratings.avg'],
+    "src_ratings.std": r['src_ratings.std'],
+    "tsnl_ratings.avg": r['tsnl_ratings.avg'],
+    "tsnl_ratings.std": r['tsnl_ratings.std'],
+  }
 }
